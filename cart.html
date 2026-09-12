@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Vimukthi Thuhina</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cart-section {
+            padding: 120px 8% 60px;
+            min-height: 80vh;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: #111a28;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .cart-table th, .cart-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #223248;
+            color: #fff;
+        }
+        .cart-table th {
+            background-color: #1b2a3f;
+            color: #00d2ff;
+        }
+        .remove-btn {
+            background: #ff4757;
+            color: #fff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart-summary {
+            margin-top: 30px;
+            text-align: right;
+            color: #fff;
+        }
+        .cart-summary h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        .checkout-form {
+            max-width: 500px;
+            margin: 40px auto 0;
+            background: #111a28;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .checkout-form h3 {
+            color: #00d2ff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">Vimukthi<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cart.html" class="cart-link active"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <h2 class="section-title">Your Selected <span>Plans</span></h2>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Selected Plan</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cartItemsContainer">
+                <!-- Cart Data will render here dynamically -->
+            </tbody>
+        </table>
+
+        <div class="cart-summary">
+            <h3>Total: $<span id="totalPrice">0</span></h3>
+        </div>
+
+        <!-- Checkout / Submit Order Form -->
+        <div class="checkout-form">
+            <h3>Complete Order</h3>
+            <form id="checkoutForm" action="https://formspree.io/f/mwlkjeel" method="POST">
+                <input type="hidden" name="Order_Details" id="orderDetailsInput">
+                <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #223248; background:#0b131f; color:#fff;">
+                <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #223248; background:#0b131f; color:#fff;">
+                <textarea name="message" rows="3" placeholder="Additional Notes (Optional)" style="width:100%; padding:12px; margin-bottom:15px; border-radius:5px; border:1px solid #223248; background:#0b131f; color:#fff;"></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Submit Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vimukthi Thuhina. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('userCart')) || [];
+            let container = document.getElementById('cartItemsContainer');
+            let totalPrice = 0;
+            container.innerHTML = '';
+
+            if (cart.length === 0) {
+                container.innerHTML = '<tr><td colspan="3" style="text-align:center;">Your Cart is Empty!</td></tr>';
+                document.getElementById('totalPrice').innerText = '0';
+                document.getElementById('orderDetailsInput').value = 'No items selected';
+                return;
+            }
+
+            let orderSummaryText = '';
+
+            cart.forEach((item, index) => {
+                totalPrice += item.price;
+                orderSummaryText += `${item.name} ($${item.price}), `;
+                
+                container.innerHTML += `
+                    <tr>
+                        <td>${item.name}</td>
+                        <td>$${item.price}</td>
+                        <td><button class="remove-btn" onclick="removeFromCart(${index})">Remove</button></td>
+                    </tr>
+                `;
+            });
+
+            document.getElementById('totalPrice').innerText = totalPrice;
+            document.getElementById('orderDetailsInput').value = `Total: $${totalPrice} | Plans: ${orderSummaryText}`;
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('userCart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('userCart', JSON.stringify(cart));
+            displayCart();
+        }
+
+        // On submit, clear cart
+        document.getElementById('checkoutForm').addEventListener('submit', function() {
+            setTimeout(() => {
+                localStorage.removeItem('userCart');
+            }, 1000);
+        });
+
+        displayCart();
+    </script>
+</body>
+</html>
