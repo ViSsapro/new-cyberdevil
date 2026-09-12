@@ -1,105 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Methods | Vimukthi Thuhina</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
+/* Payment Section Styles */
+.payment-section {
+    padding: 8rem 8% 5rem;
+    min-height: 80vh;
+}
 
-    <!-- Header / Navigation -->
-    <header class="navbar">
-        <div class="logo">Vimukthi<span>.</span></div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-                <li><a href="cart.html" class="cart-link"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
-                <li><a href="payment.html" class="payment-link active"><i class="fa-solid fa-credit-card"></i> Payment</a></li>
-            </ul>
-        </nav>
-        <a href="index.html#contact" class="btn btn-primary nav-btn">Get In Touch</a>
-    </header>
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
 
-    <!-- Payment Section -->
-    <section class="payment-section">
-        <h2 class="section-title">Payment <span>Methods</span></h2>
-        <p class="section-subtitle">Select your preferred payment method to complete your transactions</p>
+.payment-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
 
-        <div class="payment-grid">
-            
-            <!-- Bank Details Card -->
-            <div class="payment-card">
-                <div class="card-header">
-                    <div class="card-icon-img">
-                        <!-- Image එකක් දානවා නම්: <img src="bank-logo.png" alt="Bank"> -->
-                        <i class="fa-solid fa-building-columns"></i>
-                    </div>
-                    <h3>Bank Transfer</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>Bank:</strong> Commercial / Sampath Bank</p>
-                    <p><strong>Account Name:</strong> Vimukthi Thuhina</p>
-                    <p><strong>Account No:</strong> [XXXXXXXXXX]</p>
-                    <p><strong>Branch:</strong> [Branch Name]</p>
-                </div>
-            </div>
+.payment-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
 
-            <!-- PayPal Card -->
-            <div class="payment-card">
-                <div class="card-header">
-                    <div class="card-icon-img">
-                        <!-- Image එකක් දානවා නම්: <img src="paypal-logo.png" alt="PayPal"> -->
-                        <i class="fa-brands fa-paypal"></i>
-                    </div>
-                    <h3>PayPal</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>PayPal Email:</strong> vimukthithuhina754@gmail.com</p>
-                    <p><strong>Pay Link:</strong> paypal.me/[YourPayPalUsername]</p>
-                </div>
-            </div>
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
 
-            <!-- Binance Pay Card -->
-            <div class="payment-card">
-                <div class="card-header">
-                    <div class="card-icon-img">
-                        <!-- Image එකක් දානවා නම්: <img src="binance-logo.png" alt="Binance"> -->
-                        <i class="fa-solid fa-coins"></i>
-                    </div>
-                    <h3>Binance Pay</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>Binance ID (Pay ID):</strong> [XXXXXXXX]</p>
-                    <p><strong>Email:</strong> vimukthithuhina754@gmail.com</p>
-                </div>
-            </div>
+/* Circular Image/Icon Styling */
+.card-icon-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(56, 189, 248, 0.1);
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
 
-            <!-- Skrill Card -->
-            <div class="payment-card">
-                <div class="card-header">
-                    <div class="card-icon-img">
-                        <!-- Image එකක් දානවා නම්: <img src="skrill-logo.png" alt="Skrill"> -->
-                        <i class="fa-solid fa-wallet"></i>
-                    </div>
-                    <h3>Skrill</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>Skrill Email:</strong> vimukthithuhina754@gmail.com</p>
-                </div>
-            </div>
+.card-icon-img i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
 
-        </div>
-    </section>
+.card-icon-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Vimukthi Thuhina. All Rights Reserved.</p>
-    </footer>
+.card-header h3 {
+    font-size: 1.3rem;
+}
 
-</body>
-</html>
+.card-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    word-break: break-all;
+}
+
+.card-body strong {
+    color: var(--text-color);
+}
