@@ -1,61 +1,68 @@
-// Function to Open Modal Popup
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevents background scrolling when modal is open
-    }
-}
-
-// Function to Close Modal Popup
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restores scrolling
-    }
-}
-
-// Close modal when user clicks outside the modal box
-window.onclick = function(event) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-};
-
-// Function to Add Selected Plan to Cart (LocalStorage)
-function addToCart(planName, price) {
-    let cart = JSON.parse(localStorage.getItem('userCart')) || [];
-    
-    // Add selected item to array
-    cart.push({ name: planName, price: price });
-    
-    // Save updated cart to localStorage
-    localStorage.setItem('userCart', JSON.stringify(cart));
-    
-    alert(planName + " Cart එකට එකතු කරන ලදී!");
-    
-    // Redirect to Cart page
-    window.location.href = "cart.html";
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Smooth Scroll Navbar Shadow Effect
-    const navbar = document.querySelector('.navbar');
-    
-    if (navbar) {
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+    // --- Mobile Hamburger Menu Handler ---
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    if (hamburger && navLinks) {
+        const icon = hamburger.querySelector('i');
+
+        // Hamburger Icon එක Click කළ විට Menu එක Slide වී ඒම
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark'); // ඉරි 3 වෙනුවට X එකක් පෙන්වීම
             } else {
-                navbar.style.boxShadow = 'none';
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
             }
+        });
+
+        // Menu එක ඇතුලේ link එකක් ක්ලික් කළ විට Auto Menu එක වැසීම
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                if (icon) {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     }
 
 });
+
+// --- Modal Functions (Popup Windows) ---
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Scroll වීම තාවකාලිකව නැවැත්වීම
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Scroll සක්‍රිය කිරීම
+    }
+}
+
+// Modal එකෙන් පිටත කළු පැත්ත ක්ලික් කළ විට Modal එක වැසීම
+window.onclick = function(event) {
+    if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
+
+// --- Add to Cart Functionality ---
+function addToCart(serviceName, price) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push({ name: serviceName, price: price });
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(`${serviceName} cart එකට එකතු කරන ලදී!`);
+}
