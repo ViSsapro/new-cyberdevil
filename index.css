@@ -58,7 +58,8 @@ body {
     transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--primary-color);
 }
 
@@ -407,6 +408,60 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Payment Section */
+.payment-section {
+    padding: 8rem 8% 5rem;
+    min-height: 80vh;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.payment-card {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.payment-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.payment-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+}
+
+.card-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    word-break: break-all;
+}
+
+.card-body strong {
+    color: var(--text-color);
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -423,5 +478,8 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+    .payment-section {
+        padding-top: 6rem;
     }
 }
