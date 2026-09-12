@@ -27,28 +27,35 @@ window.onclick = function(event) {
     });
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Handle Contact Form Submission
-    const contactForm = document.getElementById('contactForm');
+// Function to Add Selected Plan to Cart (LocalStorage)
+function addToCart(planName, price) {
+    let cart = JSON.parse(localStorage.getItem('userCart')) || [];
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for reaching out! Your message has been received.');
-            contactForm.reset();
-        });
-    }
+    // Add selected item to array
+    cart.push({ name: planName, price: price });
+    
+    // Save updated cart to localStorage
+    localStorage.setItem('userCart', JSON.stringify(cart));
+    
+    alert(planName + " Cart එකට එකතු කරන ලදී!");
+    
+    // Redirect to Cart page
+    window.location.href = "cart.html";
+}
+
+document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth Scroll Navbar Shadow Effect
     const navbar = document.querySelector('.navbar');
     
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
-        } else {
-            navbar.style.boxShadow = 'none';
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    }
 
 });
