@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vimukthi Thuhina | Digital Services & Solutions</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="logo">Vimukthi<span>.</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn btn-primary nav-btn">Get In Touch</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>Vimukthi Thuhina</h1>
+            <h2>I Provide <span class="typing-text">Web Deployment & Digital Services</span></h2>
+            <p>Providing high-quality web design, seamless site deployment, and specialized educational content to elevate your business online.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">My Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">My <span>Services</span></h2>
+        <p class="section-subtitle">Click on any service to view detailed pricing packages</p>
+        
+        <div class="services-container">
+
+            <!-- Service Card 1 -->
+            <div class="service-card" onclick="openModal('modal-web-dev')">
+                <i class="fa-solid fa-code icon"></i>
+                <h3>Web Design & Development</h3>
+                <p>Creating clean, modern, fully responsive web designs tailored to any requirement using HTML, CSS, and JavaScript.</p>
+                <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card" onclick="openModal('modal-web-deploy')">
+                <i class="fa-solid fa-cloud-arrow-up icon"></i>
+                <h3>Web Deployment & Hosting</h3>
+                <p>End-to-end web deployment solutions to get your website online smoothly with custom domain setup and optimization.</p>
+                <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card" onclick="openModal('modal-trading')">
+                <i class="fa-solid fa-chart-line icon"></i>
+                <h3>Trading & Financial Content</h3>
+                <p>Educational tutorials, crypto market insights, and trading guidance for beginners to build solid market knowledge.</p>
+                <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card" onclick="openModal('modal-ai-content')">
+                <i class="fa-solid fa-wand-magic-sparkles icon"></i>
+                <h3>AI Content Creation</h3>
+                <p>High-converting YouTube thumbnail designs, visual assets, and content optimization leveraging cutting-edge AI tools.</p>
+                <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal 1: Web Design & Development -->
+    <div id="modal-web-dev" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-web-dev')">&times;</span>
+            <h2>Web Design & Development</h2>
+            <p class="modal-desc">Custom, responsive web development built from scratch to match your specific requirements.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic Plan</h4>
+                    <div class="price">$25 <span>/ project</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Single Page Website</li>
+                        <li><i class="fa-solid fa-check"></i> Fully Responsive</li>
+                        <li><i class="fa-solid fa-check"></i> HTML, CSS, JS</li>
+                        <li><i class="fa-solid fa-check"></i> 1 Revision</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge">Popular</div>
+                    <h4>Standard Plan</h4>
+                    <div class="price">$50 <span>/ project</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Multi-page (Up to 4 Pages)</li>
+                        <li><i class="fa-solid fa-check"></i> Fully Responsive Design</li>
+                        <li><i class="fa-solid fa-check"></i> Contact Form Integration</li>
+                        <li><i class="fa-solid fa-check"></i> 3 Revisions</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h4>Premium Plan</h4>
+                    <div class="price">$100 <span>/ project</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Full Portfolio / Business Site</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Animations & Features</li>
+                        <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
+                        <li><i class="fa-solid fa-check"></i> Unlimited Revisions</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: Web Deployment & Hosting -->
+    <div id="modal-web-deploy" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-web-deploy')">&times;</span>
+            <h2>Web Deployment & Hosting Services</h2>
+            <p class="modal-desc">Deploy your existing projects safely to GitHub Pages, Netlify, Vercel, or custom servers.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic Setup</h4>
+                    <div class="price">$15 <span>/ deployment</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Static Web Deployment</li>
+                        <li><i class="fa-solid fa-check"></i> GitHub Pages / Vercel</li>
+                        <li><i class="fa-solid fa-check"></i> Free Subdomain</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge">Popular</div>
+                    <h4>Pro Setup</h4>
+                    <div class="price">$35 <span>/ deployment</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Full Deployment</li>
+                        <li><i class="fa-solid fa-check"></i> Custom Domain Connection</li>
+                        <li><i class="fa-solid fa-check"></i> Free SSL Certificate</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Speed Optimization</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h4>Full Maintenance</h4>
+                    <div class="price">$60 <span>/ month</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Continuous Deployment</li>
+                        <li><i class="fa-solid fa-check"></i> Domain & DNS Management</li>
+                        <li><i class="fa-solid fa-check"></i> Monthly Updates & Backups</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Server Monitoring</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: Trading & Financial Content -->
+    <div id="modal-trading" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-trading')">&times;</span>
+            <h2>Trading & Financial Education</h2>
+            <p class="modal-desc">Learn step-by-step trading strategies, risk management, and market navigation.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Starter Guide</h4>
+                    <div class="price">$20 <span>/ session</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Beginner Trading PDF/Guide</li>
+                        <li><i class="fa-solid fa-check"></i> Basics of Binance & Exchange Setup</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Risk Management Rules</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge">Popular</div>
+                    <h4>Personal Mentorship</h4>
+                    <div class="price">$50 <span>/ package</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 1-on-1 Trading Guidance</li>
+                        <li><i class="fa-solid fa-check"></i> Technical Analysis Basics</li>
+                        <li><i class="fa-solid fa-check"></i> Live Trade Walkthroughs</li>
+                        <li><i class="fa-solid fa-check"></i> Q&A Support</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h4>Pro VIP Guidance</h4>
+                    <div class="price">$90 <span>/ month</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Advanced Trading Strategies</li>
+                        <li><i class="fa-solid fa-check"></i> Weekly Market Analysis</li>
+                        <li><i class="fa-solid fa-check"></i> Crypto Market Signals Support</li>
+                        <li><i class="fa-solid fa-check"></i> Direct Priority Chat Access</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: AI Content Creation -->
+    <div id="modal-ai-content" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-ai-content')">&times;</span>
+            <h2>AI Content & Design Services</h2>
+            <p class="modal-desc">Professional thumbnails, visual branding, and AI-prompt generation for content creators.</p>
+            
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h4>Basic Pack</h4>
+                    <div class="price">$15 <span>/ pack</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 2 YouTube Thumbnails</li>
+                        <li><i class="fa-solid fa-check"></i> High Saturation & Vibrant Style</li>
+                        <li><i class="fa-solid fa-check"></i> Full HD Quality</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card featured">
+                    <div class="badge">Popular</div>
+                    <h4>Creator Pro</h4>
+                    <div class="price">$35 <span>/ pack</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 5 Premium Thumbnails</li>
+                        <li><i class="fa-solid fa-check"></i> Custom AI Art Generation</li>
+                        <li><i class="fa-solid fa-check"></i> Source Files Included</li>
+                        <li><i class="fa-solid fa-check"></i> 2 Revisions per design</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                </div>
+
+                <div class="price-card">
+                    <h4>Monthly Channel Suite</h4>
+                    <div class="price">$80 <span>/ month</span></div>
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> 12 Custom Thumbnails</li>
+                        <li><i class="fa-solid fa-check"></i> AI Video Script / Prompt Help</li>
+                        <li><i class="fa-solid fa-check"></i> Social Media Banners</li>
+                        <li><i class="fa-solid fa-check"></i> Fast 24h Turnaround</li>
+                    </ul>
+                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p>I am a passionate technology enthusiast skilled in web design, website deployment, and digital media production. Whether you need a web app deployed or engaging content created, I deliver precise, professional results tailored to your vision.</p>
+            <div class="about-details">
+                <div class="detail-item"><i class="fa-solid fa-check"></i> 100% Responsive Designs</div>
+                <div class="detail-item"><i class="fa-solid fa-check"></i> Fast Deployment Support</div>
+                <div class="detail-item"><i class="fa-solid fa-check"></i> Dedicated Client Assistance</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email:</h4>
+                        <p>vimukthithuhina754@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Vimukthi Thuhina. All Rights Reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
