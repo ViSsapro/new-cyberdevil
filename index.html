@@ -18,6 +18,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="cart.html" class="cart-link"><i class="fa-solid fa-cart-shopping"></i> Cart</a></li>
             </ul>
         </nav>
         <a href="#contact" class="btn btn-primary nav-btn">Get In Touch</a>
@@ -43,8 +44,6 @@
         <p class="section-subtitle">Click on any service to view detailed pricing packages</p>
         
         <div class="services-container">
-
-            <!-- Service Card 1 -->
             <div class="service-card" onclick="openModal('modal-web-dev')">
                 <i class="fa-solid fa-code icon"></i>
                 <h3>Web Design & Development</h3>
@@ -52,7 +51,6 @@
                 <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
             </div>
 
-            <!-- Service Card 2 -->
             <div class="service-card" onclick="openModal('modal-web-deploy')">
                 <i class="fa-solid fa-cloud-arrow-up icon"></i>
                 <h3>Web Deployment & Hosting</h3>
@@ -60,7 +58,6 @@
                 <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
             </div>
 
-            <!-- Service Card 3 -->
             <div class="service-card" onclick="openModal('modal-trading')">
                 <i class="fa-solid fa-chart-line icon"></i>
                 <h3>Trading & Financial Content</h3>
@@ -68,14 +65,12 @@
                 <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
             </div>
 
-            <!-- Service Card 4 -->
             <div class="service-card" onclick="openModal('modal-ai-content')">
                 <i class="fa-solid fa-wand-magic-sparkles icon"></i>
                 <h3>AI Content Creation</h3>
                 <p>High-converting YouTube thumbnail designs, visual assets, and content optimization leveraging cutting-edge AI tools.</p>
                 <span class="click-hint">Click for Pricing & Details <i class="fa-solid fa-arrow-right"></i></span>
             </div>
-
         </div>
     </section>
 
@@ -96,7 +91,7 @@
                         <li><i class="fa-solid fa-check"></i> HTML, CSS, JS</li>
                         <li><i class="fa-solid fa-check"></i> 1 Revision</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Web Design - Basic Plan', 25)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card featured">
@@ -109,7 +104,7 @@
                         <li><i class="fa-solid fa-check"></i> Contact Form Integration</li>
                         <li><i class="fa-solid fa-check"></i> 3 Revisions</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Web Design - Standard Plan', 50)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card">
@@ -121,7 +116,7 @@
                         <li><i class="fa-solid fa-check"></i> SEO Optimization</li>
                         <li><i class="fa-solid fa-check"></i> Unlimited Revisions</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-dev')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Web Design - Premium Plan', 100)" class="btn btn-primary">Choose Plan</button>
                 </div>
             </div>
         </div>
@@ -143,7 +138,7 @@
                         <li><i class="fa-solid fa-check"></i> GitHub Pages / Vercel</li>
                         <li><i class="fa-solid fa-check"></i> Free Subdomain</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Deployment - Basic Setup', 15)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card featured">
@@ -156,7 +151,7 @@
                         <li><i class="fa-solid fa-check"></i> Free SSL Certificate</li>
                         <li><i class="fa-solid fa-check"></i> Basic Speed Optimization</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Deployment - Pro Setup', 35)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card">
@@ -168,7 +163,7 @@
                         <li><i class="fa-solid fa-check"></i> Monthly Updates & Backups</li>
                         <li><i class="fa-solid fa-check"></i> 24/7 Server Monitoring</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-web-deploy')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Deployment - Full Maintenance', 60)" class="btn btn-primary">Choose Plan</button>
                 </div>
             </div>
         </div>
@@ -190,7 +185,7 @@
                         <li><i class="fa-solid fa-check"></i> Basics of Binance & Exchange Setup</li>
                         <li><i class="fa-solid fa-check"></i> Basic Risk Management Rules</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Trading - Starter Guide', 20)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card featured">
@@ -203,7 +198,7 @@
                         <li><i class="fa-solid fa-check"></i> Live Trade Walkthroughs</li>
                         <li><i class="fa-solid fa-check"></i> Q&A Support</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Trading - Personal Mentorship', 50)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card">
@@ -215,7 +210,7 @@
                         <li><i class="fa-solid fa-check"></i> Crypto Market Signals Support</li>
                         <li><i class="fa-solid fa-check"></i> Direct Priority Chat Access</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-trading')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('Trading - Pro VIP Guidance', 90)" class="btn btn-primary">Choose Plan</button>
                 </div>
             </div>
         </div>
@@ -237,7 +232,7 @@
                         <li><i class="fa-solid fa-check"></i> High Saturation & Vibrant Style</li>
                         <li><i class="fa-solid fa-check"></i> Full HD Quality</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('AI Content - Basic Pack', 15)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card featured">
@@ -250,7 +245,7 @@
                         <li><i class="fa-solid fa-check"></i> Source Files Included</li>
                         <li><i class="fa-solid fa-check"></i> 2 Revisions per design</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('AI Content - Creator Pro', 35)" class="btn btn-primary">Choose Plan</button>
                 </div>
 
                 <div class="price-card">
@@ -262,7 +257,7 @@
                         <li><i class="fa-solid fa-check"></i> Social Media Banners</li>
                         <li><i class="fa-solid fa-check"></i> Fast 24h Turnaround</li>
                     </ul>
-                    <a href="#contact" onclick="closeModal('modal-ai-content')" class="btn btn-primary">Choose Plan</a>
+                    <button onclick="addToCart('AI Content - Monthly Channel Suite', 80)" class="btn btn-primary">Choose Plan</button>
                 </div>
             </div>
         </div>
@@ -272,7 +267,7 @@
     <section id="about" class="about">
         <div class="about-content">
             <h2 class="section-title">About <span>Me</span></h2>
-            <p>I am a passionate technology enthusiast skilled in web design, website deployment, and digital media production. Whether you need a web app deployed or engaging content created, I deliver precise, professional results tailored to your vision.</p>
+            <p>I am a passionate technology enthusiast skilled in web design, website deployment, and digital media production.</p>
             <div class="about-details">
                 <div class="detail-item"><i class="fa-solid fa-check"></i> 100% Responsive Designs</div>
                 <div class="detail-item"><i class="fa-solid fa-check"></i> Fast Deployment Support</div>
@@ -295,7 +290,6 @@
                 </div>
             </div>
 
-            <!-- Formspree Form Integration -->
             <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwlkjeel" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -305,7 +299,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Vimukthi Thuhina. All Rights Reserved.</p>
     </footer>
