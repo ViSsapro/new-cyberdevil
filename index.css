@@ -7,6 +7,7 @@
     --text-color: #ffffff;
     --text-secondary: #a0a5b5;
     --modal-bg: rgba(0, 0, 0, 0.85);
+    --accent-red: #ff4757;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* Navbar Header */
@@ -85,6 +87,7 @@ body {
     transition: 0.3s;
     cursor: pointer;
     border: none;
+    text-align: center;
 }
 
 .btn-primary {
@@ -98,7 +101,6 @@ body {
 }
 
 .btn-secondary {
-    border: 2rem;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
     background: transparent;
@@ -107,6 +109,99 @@ body {
 .btn-secondary:hover {
     background-color: var(--primary-color);
     color: #000;
+}
+
+/* Page Containers (Cart, Payment, Hero, etc.) */
+.page-container {
+    padding: 8rem 8% 4rem 8%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Payment & Cart Form Layouts */
+.checkout-card, .cart-card {
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.9rem 1rem;
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+/* Cart Table / Items List */
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.cart-table th, .cart-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cart-table th {
+    color: var(--primary-color);
+}
+
+.cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+.cart-total {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.cart-total span {
+    color: var(--primary-color);
+}
+
+.btn-remove {
+    background-color: var(--accent-red);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 /* Hero Section */
@@ -363,6 +458,7 @@ footer {
     padding: 2rem;
     background-color: var(--card-bg);
     color: var(--text-secondary);
+    margin-top: auto;
 }
 
 /* Mobile Responsive Menu Styles */
@@ -394,6 +490,10 @@ footer {
 
     .nav-links.active {
         right: 0 !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
     }
 
     .hero-content h1 {
