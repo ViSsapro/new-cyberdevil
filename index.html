@@ -13,7 +13,7 @@
     <header class="navbar">
         <div class="logo">Vimukthi<span>.</span></div>
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
@@ -23,6 +23,11 @@
             </ul>
         </nav>
         <a href="#contact" class="btn btn-primary nav-btn">Get In Touch</a>
+
+        <!-- Mobile Hamburger Icon (ඉරි කැබලි 3) -->
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -305,5 +310,33 @@
     </footer>
 
     <script src="index.js"></script>
+
+    <!-- Mobile Menu Toggle JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const icon = hamburger.querySelector('i');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Link එකක් ක්ලික් කළ පසු Mobile Menu එක වැසීමට:
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
