@@ -59,10 +59,10 @@ window.onclick = function(event) {
     }
 };
 
-// --- Add to Cart Functionality ---
+// --- Add to Cart Functionality (Fixed with 'userCart' key) ---
 function addToCart(serviceName, price) {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem('userCart')) || [];
     cart.push({ name: serviceName, price: price });
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('userCart', JSON.stringify(cart));
     alert(`${serviceName} cart එකට එකතු කරන ලදී!`);
 }
